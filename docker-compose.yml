@@ -1,0 +1,21 @@
+version: "3"
+services:
+  builder:
+    build:
+      context: .
+    commands:
+      - make gpg
+    volumes:
+      - ./:/work
+  installer:
+    image: debian:sid
+    commands:
+      - apt-get update
+  repo:
+    image: python
+    commands:
+      - python3 -m http.server 3000
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/work

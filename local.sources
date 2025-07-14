@@ -1,0 +1,7 @@
+Types: deb
+URIs: http://host.docker.internal:3000
+Suites: stable
+Components: main
+Enabled: yes
+#Signed-By: /usr/share/keyrings/local.gpg
+Signed-By: /work/local.gpg
